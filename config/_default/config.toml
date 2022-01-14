@@ -181,3 +181,13 @@ navbar_logo = false
 	url = "https://review.gerrithub.io/plugins/gitiles/cue-lang/cue"
 	icon = "fab fa-git"
         desc = "The source-of-truth repo."
+[module]
+    # uncomment line below for temporary local development of module
+    # replacements = "github.com/google/docsy -> ../../docsy"
+    [module.hugoVersion]
+        extended = true
+        min = "0.75.0"
+    [[module.imports]]
+        path = "github.com/google/docsy"
+        # set disable to false to use theme as module
+        disable = true
