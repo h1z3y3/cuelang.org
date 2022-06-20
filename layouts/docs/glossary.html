@@ -1,0 +1,33 @@
+{{ define "side-menu" }}
+{{ partial "docs/side-menu.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<h1 class="text-capitalize">{{ T "glossary" }}</h1>
+
+{{ partial "docs/glossary-terms.html" . }}
+{{ $glossary_items := $.Scratch.Get "glossary_items" }}
+{{ with $glossary_items }}
+{{ $glossary_terms := sort . "Title" "asc" }}
+<ul>
+	{{ range $glossary_terms }}
+	{{ $term_identifier := (printf "term-%s" .Params.id) }}
+
+	<li class="{{ $.Scratch.Get "tag_classes" }}" >
+		<div id="{{ $term_identifier }}" class="term-anchor"></div>
+		<div>
+			<div class="term-name"><b>{{ .Title }}</b>
+			{{ with .Params.aka }}
+			{{ T "layouts_docs_glossary_aka" }}:<i>{{ delimit . ", " }}</i>
+			<br>
+			{{ end }}
+			<div id="{{ .Params.id }}" >
+				{{ .Content }}
+			</div>
+		</div>
+	</li>
+	{{ end }}
+</ul>
+{{ end }}
+{{ end }}
+

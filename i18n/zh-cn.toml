@@ -1,0 +1,8 @@
+# i18n strings for the Chinese version of the site (https://kubernetes.io/zh/)
+# 注意：修改此文件时请维持字符串名称的字母顺序并与英文版保持一致
+
+[glossary]
+other = "术语表"
+
+[layouts_docs_glossary_aka]
+other = "亦称作"

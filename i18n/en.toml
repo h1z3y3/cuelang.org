@@ -1,0 +1,8 @@
+# i18n strings for the English (main) site.
+# NOTE: Please keep the entries in alphabetical order when editing
+
+[glossary]
+other = "Glossary"
+
+[layouts_docs_glossary_aka]
+other = "Also known as"
